@@ -5,7 +5,7 @@
  * For full license text, see LICENSE.txt file in the repo root or https://opensource.org/licenses/BSD-3-Clause
  */
 import { flags, SfdxCommand } from '@salesforce/command';
-import { Messages, SfdxError } from '@salesforce/core';
+import { Messages } from '@salesforce/core';
 import { AnyJson } from '@salesforce/ts-types';
 import { Account } from '../../shared/typeDefs';
 
@@ -55,5 +55,6 @@ export default class AccountGet extends SfdxCommand {
     accounts.forEach((account: Account) => {
       this.ux.log(`Id : ${account.Id} | name : ${account.Name}`);
     });
+    return '';
   }
 }
